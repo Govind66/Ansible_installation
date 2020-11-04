@@ -10,7 +10,8 @@ sudo yum -y update
 
 * We need to install EPEL repository into the system as Ansible is available in default YUM repository is very old.
 ```
-sudo yum -y install epel-repo
+$ sudo yum install epel-release
+$ sudo yum install python-argcomplete
 ```
 * Update the repository cache by running the command.
 ```
@@ -25,3 +26,4 @@ sudo yum -y install ansible
 ```
 ansible --version
 ```
+## Step 4:
