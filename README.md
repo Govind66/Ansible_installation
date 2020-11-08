@@ -27,3 +27,24 @@ sudo yum -y install ansible
 ansible --version
 ```
 ## Step 4:
+* Do passwordless login in between controll node and Manged node
+```
+$ ssh-keygen
+```
+* Copy this generated key and paste it in manged node authorition_keys.
+```
+ssh-copy-id -i root@IP address of your host
+```
+### Note:=> Workaround: if it is not possible to copy with the help of above command then follow the following steps.
+* ```cat /.ssh/id_rsa.pub``` copy it and paste it in managed node ```/.ssh/authorized_keys```
+                                      ```or```
+* edit /etc/ssh/sshd_config and change ```PasswordAuthentication no``` to ```PasswordAuthentication yes```.
+                                      ```or```
+* Setting 700 to .ssh and 600 to authorized_keys.
+```
+chmod 700 /root/.ssh
+chmod 600 /root/.ssh/authorized_keys
+```
+
+
+
