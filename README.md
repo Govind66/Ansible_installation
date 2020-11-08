@@ -37,9 +37,13 @@ ssh-copy-id -i root@IP address of your host
 ```
 ### Note:=> Workaround: if it is not possible to copy with the help of above command then follow the following steps.
 * ```cat /.ssh/id_rsa.pub``` copy it and paste it in managed node ```/.ssh/authorized_keys```
-                                      ```or```
+                                      ```
+                                      or
+                                      ```
 * edit /etc/ssh/sshd_config and change ```PasswordAuthentication no``` to ```PasswordAuthentication yes```.
-                                      ```or```
+                                      ```
+                                      or
+                                      ```
 * Setting 700 to .ssh and 600 to authorized_keys.
 ```
 chmod 700 /root/.ssh
